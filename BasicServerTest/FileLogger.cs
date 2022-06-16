@@ -2,41 +2,35 @@
 using System.IO;
 using System.Text.Json;
 
-namespace Lecture15
+namespace FinalTestSample
 {
-    class FileLogger
+    public class FileLogger
     {
         public string _fileName { get; set; }
 
         public FileLogger(string fileName)
         {
-            _fileName = fileName;
+            //문제 6:
+            //_fileName에 filename + 날짜.log 로 로그파일명 저장
+            //예제 > fileName이 Log일때 Log220616.log
+
+            //_fileName = 
+
         }
 
-        public void Write(string logMessage)
+        public void Write(string logType, string logMessage)
         {
-            StreamWriter writer;
-            writer = File.CreateText(_fileName);        //Text File이 저장될 위치(파일명)
-                                                        //파일 이름만 지정하면 컴파일된 폴더내 해당 파일 이름으로 저장됨
-            writer.WriteLine(logMessage);               //저장될 string
-            writer.Close();
+            //문제 7:
+            //로그는 [날짜 시간] <logType> logMessage로 작성되도록 아래 log라는 string에 저장
+            //예시 > [2022-06-16 12:00:00] <Error> 로그인 에러
+                    
+
+            
+            
+
         }
 
-        //public void Store(Settings settings, string fileName)
-        //{
-        //    // Serialize
-        //    string jsonString = JsonSerializer.Serialize(settings);
-        //    System.Console.WriteLine(jsonString);
-        //    StreamWriter writer;
-        //    writer = File.CreateText(fileName);        //Text File이 저장될 위치(파일명)
-        //                                               //파일 이름만 지정하면 컴파일된 폴더내 해당 파일 이름으로 저장됨
-        //    writer.WriteLine(jsonString);    //저장될 string
-        //    writer.Close();
-        //}
-        //public static Settings Load(string fileName)
-        //{
-        //    string jsonString = File.ReadAllText(fileName);
-        //    return JsonSerializer.Deserialize<Settings>(jsonString);
-        //}
+        
+
     }
 }
